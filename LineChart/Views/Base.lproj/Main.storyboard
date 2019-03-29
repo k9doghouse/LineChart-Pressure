@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LineChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Current Barometric Pressure   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im4-cv-6Pd">
+                                <rect key="frame" x="80" y="95" width="254" height="27"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="0.0048531177449999997" green="0.80710631610000005" blue="0.0020519744139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7b-SF-I0j">
+                                <rect key="frame" x="153" y="653" width="106" height="47"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="  Refresh  ">
+                                    <color key="titleColor" red="0.0048531177449999997" green="0.80710631610000005" blue="0.0020519744139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2k-CB-RnB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Barometric Pressure" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-J1-Vqo">
+                                <rect key="frame" x="105" y="28" width="204" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="YK0-8U-j2t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.80194910129999997" green="1" blue="0.78797933210000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.1184270903" green="0.15331286190000001" blue="0.128531754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oud-5o-amy" customClass="LineChart" customModule="LineChart" customModuleProvider="target">
+                                <rect key="frame" x="8" y="169" width="398" height="398"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31663759450000001" green="0.31663759450000001" blue="0.31663759450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="6hb-RX-epM"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F7b-SF-I0j" secondAttribute="trailing" constant="20" symbolic="YES" id="DOY-fd-2ZW"/>
+                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="centerX" secondItem="Oud-5o-amy" secondAttribute="centerX" id="ENs-Sc-3k3"/>
+                            <constraint firstItem="Oud-5o-amy" firstAttribute="top" secondItem="Im4-cv-6Pd" secondAttribute="bottom" constant="47" id="GFf-qP-QOn"/>
+                            <constraint firstItem="Oud-5o-amy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GME-EI-5m7"/>
+                            <constraint firstItem="F7b-SF-I0j" firstAttribute="top" secondItem="Oud-5o-amy" secondAttribute="bottom" constant="86" id="Pdp-d6-Xbc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F7b-SF-I0j" secondAttribute="bottom" constant="36" id="QIf-iN-CPw"/>
+                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="top" secondItem="Kbb-J1-Vqo" secondAttribute="bottom" constant="43" id="Vuw-Q6-7Ts"/>
+                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="XYB-5Q-PZT"/>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="centerX" secondItem="Im4-cv-6Pd" secondAttribute="centerX" id="YaN-iW-SJS"/>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="85" id="Ygl-e3-qKI"/>
+                            <constraint firstItem="F7b-SF-I0j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="153" id="ns0-As-1KX"/>
+                            <constraint firstItem="Oud-5o-amy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="pmC-AX-yd1"/>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tdb-6t-vnT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lineChart" destination="Oud-5o-amy" id="YAw-iG-GoJ"/>
+                        <outlet property="pressureLabel" destination="Im4-cv-6Pd" id="52B-bZ-jGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560.86956521739137" y="98.641304347826093"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.0048531177449999997" green="0.80710631610000005" blue="0.0020519744139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>

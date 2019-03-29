@@ -1,0 +1,10 @@
+// Sample dataset
+        let dataEntries = [
+            PointEntry(pressureValue: 1008, dateTimeTitle: "1"),
+            PointEntry(pressureValue: 1007, dateTimeTitle: "2"),
+            PointEntry(pressureValue: 1009, dateTimeTitle: "3"),
+            PointEntry(pressureValue: 1003, dateTimeTitle: "4"),
+            PointEntry(pressureValue: 1020, dateTimeTitle: "5"),
+            PointEntry(pressureValue: 1030, dateTimeTitle: "6"),
+            PointEntry(pressureValue: 1024, dateTimeTitle: "7")
+        ]
