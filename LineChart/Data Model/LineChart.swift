@@ -1,17 +1,20 @@
-//
-//  LineChart.swift
-//  LineChart
-//
-//  Created by Nguyen Vu Nhat Minh on 25/8/17.
-//  Copyright © 2017 Nguyen Vu Nhat Minh. All rights reserved.
-//  k9doghouse 2019
+///
+///  LineChart.swift
+///  LineChart
+///
+///  Created by Nguyen Vu Nhat Minh on 25/8/17.
+///  Copyright © 2017 Nguyen Vu Nhat Minh. All rights reserved.
+///
+///  k9doghouse 2019
+///  https://github.com/k9doghouse/LineChart-Pressure.git
+///
 
 import UIKit
 
 struct PointEntry : Codable {
     
     var pressureValue: Int = Int(round(trunc(1010.25)))
-    var dateTimeTitle: String = "Mar 2, 2019 at 12:37"
+    var dateTimeTitle: String = "3/29/19, 15:37"
 }
 
 extension PointEntry: Comparable {
@@ -27,8 +30,8 @@ class LineChart: UIView {
     
 
     let lineGap: CGFloat = 08.0
-    let topSpace: CGFloat = 40.0
-    let bottomSpace: CGFloat = 40.0
+    let topSpace: CGFloat = 50.0
+    let bottomSpace: CGFloat = 50.0
     let topHorizontalLine: CGFloat = 110.0 / 100.0
 
     var dataEntries: [PointEntry]? { didSet { self.setNeedsLayout() } }
@@ -189,13 +192,15 @@ class LineChart: UIView {
         if let dataEntries = dataEntries,
             dataEntries.count > 0 {
 
-            //MARK - horizontal titles/lines
+            //MARK - horizontal (bottom) titles/dates
             for i in 0..<dataEntries.count {
+
                 let textLayer = CATextLayer()
-                textLayer.frame = CGRect(x: lineGap*CGFloat(i) - lineGap/2 + 10,
+
+                textLayer.frame = CGRect(x: lineGap*CGFloat(i) - lineGap/2 + 08,
                                          y: mainLayer.frame.size.height - bottomSpace/2,
-                                         width: lineGap*5,
-                                         height: 16)
+                                         width: lineGap*8,
+                                         height: 24)
 
                 textLayer.foregroundColor = #colorLiteral(red: 0.5019607843, green: 0.6784313725, blue: 0.8078431373, alpha: 1).cgColor
                 textLayer.backgroundColor = UIColor.clear.cgColor
@@ -204,7 +209,8 @@ class LineChart: UIView {
                 textLayer.font = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
                 textLayer.fontSize = 10
 
-                if (i % 10) == 0 {
+                //MARK - only display the tenth reading
+                if (i % 24) == 0 {
                 textLayer.string = dataEntries[i].dateTimeTitle
                 } else {
                     textLayer.string = ""
@@ -253,7 +259,7 @@ class LineChart: UIView {
                     minMaxGap = CGFloat(max - min) * topHorizontalLine
                     lineValue = Int((1-value) * minMaxGap) + Int(min)
                 }
-                //MARK - Vertical titles/lines
+                //MARK - Vertical (left-side) titles/lines
                 let textLayer = CATextLayer()
                 textLayer.frame = CGRect(x: 4,
                                          y: height,
@@ -283,11 +289,3 @@ class LineChart: UIView {
     }
 }
 
-
-/*
-
- let frame = CTFramesetterCreateFrame(frameSetter, CFRange(location: 0, length: attributedString.length), textPath, nil)
- CGContextSetTextMatrix(context, CGAffineTransformMakeRotation(CGFloat(M_PI)))
- CTFrameDraw(frame, context)
-
- */

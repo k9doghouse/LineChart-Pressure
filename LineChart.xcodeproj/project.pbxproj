@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D12F3F9224EB8B7003D686E /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F3F4224EB8B7003D686E /* RoundedLabel.swift */; };
+		3D12F3FA224EB8B7003D686E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F3F5224EB8B7003D686E /* RoundedButton.swift */; };
+		3D12F3FB224EB8B7003D686E /* RandomUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F3F6224EB8B7003D686E /* RandomUIColor.swift */; };
+		3D12F3FC224EB8B7003D686E /* RoundedTextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F3F7224EB8B7003D686E /* RoundedTextInputField.swift */; };
+		3D12F3FD224EB8B7003D686E /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12F3F8224EB8B7003D686E /* RoundedTextView.swift */; };
 		D702DD4E1F4FC52C0057F54F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702DD4D1F4FC52C0057F54F /* AppDelegate.swift */; };
-		D702DD501F4FC52C0057F54F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702DD4F1F4FC52C0057F54F /* ViewController.swift */; };
+		D702DD501F4FC52C0057F54F /* ViewControllerPressureReadings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702DD4F1F4FC52C0057F54F /* ViewControllerPressureReadings.swift */; };
 		D702DD531F4FC52C0057F54F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D702DD511F4FC52C0057F54F /* Main.storyboard */; };
 		D702DD551F4FC52C0057F54F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D702DD541F4FC52C0057F54F /* Assets.xcassets */; };
 		D702DD581F4FC52C0057F54F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D702DD561F4FC52C0057F54F /* LaunchScreen.storyboard */; };
@@ -16,9 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D12F3F4224EB8B7003D686E /* RoundedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
+		3D12F3F5224EB8B7003D686E /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		3D12F3F6224EB8B7003D686E /* RandomUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUIColor.swift; sourceTree = "<group>"; };
+		3D12F3F7224EB8B7003D686E /* RoundedTextInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextInputField.swift; sourceTree = "<group>"; };
+		3D12F3F8224EB8B7003D686E /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		D702DD4A1F4FC52C0057F54F /* LineChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D702DD4D1F4FC52C0057F54F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D702DD4F1F4FC52C0057F54F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D702DD4F1F4FC52C0057F54F /* ViewControllerPressureReadings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPressureReadings.swift; sourceTree = "<group>"; };
 		D702DD521F4FC52C0057F54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D702DD541F4FC52C0057F54F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D702DD571F4FC52C0057F54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +58,11 @@
 		3D5FD82F224D616000E4656E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D12F3F6224EB8B7003D686E /* RandomUIColor.swift */,
+				3D12F3F5224EB8B7003D686E /* RoundedButton.swift */,
+				3D12F3F4224EB8B7003D686E /* RoundedLabel.swift */,
+				3D12F3F7224EB8B7003D686E /* RoundedTextInputField.swift */,
+				3D12F3F8224EB8B7003D686E /* RoundedTextView.swift */,
 				D702DD4D1F4FC52C0057F54F /* AppDelegate.swift */,
 				D702DD541F4FC52C0057F54F /* Assets.xcassets */,
 				D702DD561F4FC52C0057F54F /* LaunchScreen.storyboard */,
@@ -59,7 +74,7 @@
 		3D5FD830224D617D00E4656E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D702DD4F1F4FC52C0057F54F /* ViewController.swift */,
+				D702DD4F1F4FC52C0057F54F /* ViewControllerPressureReadings.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,7 +188,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D702DD641F506FE80057F54F /* LineChart.swift in Sources */,
-				D702DD501F4FC52C0057F54F /* ViewController.swift in Sources */,
+				3D12F3FD224EB8B7003D686E /* RoundedTextView.swift in Sources */,
+				3D12F3FA224EB8B7003D686E /* RoundedButton.swift in Sources */,
+				3D12F3FC224EB8B7003D686E /* RoundedTextInputField.swift in Sources */,
+				3D12F3FB224EB8B7003D686E /* RandomUIColor.swift in Sources */,
+				D702DD501F4FC52C0057F54F /* ViewControllerPressureReadings.swift in Sources */,
+				3D12F3F9224EB8B7003D686E /* RoundedLabel.swift in Sources */,
 				D702DD4E1F4FC52C0057F54F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

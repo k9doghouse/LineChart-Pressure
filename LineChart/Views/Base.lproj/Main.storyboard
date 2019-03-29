@@ -9,28 +9,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller Pressure Readings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LineChart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewControllerPressureReadings" customModule="LineChart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ViewControllerPressureReadings" id="8bC-Xf-vdC" userLabel="Main View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Current Barometric Pressure   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im4-cv-6Pd">
-                                <rect key="frame" x="80" y="95" width="254" height="27"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
-                                <color key="textColor" red="0.0048531177449999997" green="0.80710631610000005" blue="0.0020519744139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Barometric Pressure" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-J1-Vqo" userLabel="Current Barometric Pressure static label" customClass="RoundedLabel" customModule="LineChart" customModuleProvider="target">
+                                <rect key="frame" x="115" y="28" width="184" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="rWW-dx-VLC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.80194910129999997" green="1" blue="0.78797933210000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.1184270903" green="0.15331286190000001" blue="0.128531754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  1000mb   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im4-cv-6Pd" userLabel="Current Pressure Label" customClass="RoundedLabel" customModule="LineChart" customModuleProvider="target">
+                                <rect key="frame" x="120" y="60" width="174" height="45"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7b-SF-I0j">
-                                <rect key="frame" x="153" y="653" width="106" height="47"/>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="lineChartView" translatesAutoresizingMaskIntoConstraints="NO" id="Oud-5o-amy" userLabel="Line Chart View" customClass="LineChart" customModule="LineChart" customModuleProvider="target">
+                                <rect key="frame" x="8" y="187" width="398" height="362"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7b-SF-I0j" userLabel="Refresh button" customClass="RoundedButton" customModule="LineChart" customModuleProvider="target">
+                                <rect key="frame" x="153" y="635" width="108" height="65"/>
+                                <color key="backgroundColor" red="0.1184270903" green="0.15331286190000001" blue="0.128531754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="z5H-R8-A9V"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
                                 <state key="normal" title="  Refresh  ">
@@ -41,49 +63,43 @@
                                     <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2k-CB-RnB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Barometric Pressure" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-J1-Vqo">
-                                <rect key="frame" x="105" y="28" width="204" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="YK0-8U-j2t"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  03.03.2019-1432-CDT  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-oZ-E7N" customClass="RoundedLabel" customModule="LineChart" customModuleProvider="target">
+                                <rect key="frame" x="125.66666666666669" y="118" width="163" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.80194910129999997" green="1" blue="0.78797933210000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0048531177449999997" green="0.80710631610000005" blue="0.0020519744139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.1184270903" green="0.15331286190000001" blue="0.128531754" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oud-5o-amy" customClass="LineChart" customModule="LineChart" customModuleProvider="target">
-                                <rect key="frame" x="8" y="169" width="398" height="398"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.31663759450000001" green="0.31663759450000001" blue="0.31663759450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="6hb-RX-epM"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F7b-SF-I0j" secondAttribute="trailing" constant="20" symbolic="YES" id="DOY-fd-2ZW"/>
-                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="centerX" secondItem="Oud-5o-amy" secondAttribute="centerX" id="ENs-Sc-3k3"/>
-                            <constraint firstItem="Oud-5o-amy" firstAttribute="top" secondItem="Im4-cv-6Pd" secondAttribute="bottom" constant="47" id="GFf-qP-QOn"/>
-                            <constraint firstItem="Oud-5o-amy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GME-EI-5m7"/>
-                            <constraint firstItem="F7b-SF-I0j" firstAttribute="top" secondItem="Oud-5o-amy" secondAttribute="bottom" constant="86" id="Pdp-d6-Xbc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F7b-SF-I0j" secondAttribute="bottom" constant="36" id="QIf-iN-CPw"/>
-                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="top" secondItem="Kbb-J1-Vqo" secondAttribute="bottom" constant="43" id="Vuw-Q6-7Ts"/>
-                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="XYB-5Q-PZT"/>
-                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="centerX" secondItem="Im4-cv-6Pd" secondAttribute="centerX" id="YaN-iW-SJS"/>
-                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="85" id="Ygl-e3-qKI"/>
-                            <constraint firstItem="F7b-SF-I0j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="153" id="ns0-As-1KX"/>
-                            <constraint firstItem="Oud-5o-amy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="pmC-AX-yd1"/>
-                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tdb-6t-vnT"/>
+                            <constraint firstItem="M2D-oZ-E7N" firstAttribute="centerX" secondItem="Oud-5o-amy" secondAttribute="centerX" id="0La-tU-UMh"/>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="centerX" secondItem="Im4-cv-6Pd" secondAttribute="centerX" id="7Yf-j9-I8d"/>
+                            <constraint firstItem="Oud-5o-amy" firstAttribute="top" secondItem="M2D-oZ-E7N" secondAttribute="bottom" constant="51" id="DtM-4r-0nv"/>
+                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="centerX" secondItem="M2D-oZ-E7N" secondAttribute="centerX" id="GRD-AF-Vb7"/>
+                            <constraint firstItem="M2D-oZ-E7N" firstAttribute="top" secondItem="Im4-cv-6Pd" secondAttribute="bottom" constant="13" id="I9f-8h-K0B"/>
+                            <constraint firstItem="Oud-5o-amy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Izk-0g-wDd"/>
+                            <constraint firstItem="Im4-cv-6Pd" firstAttribute="top" secondItem="Kbb-J1-Vqo" secondAttribute="bottom" constant="8" symbolic="YES" id="JDr-ta-acg"/>
+                            <constraint firstItem="Oud-5o-amy" firstAttribute="centerX" secondItem="F7b-SF-I0j" secondAttribute="centerX" id="JkI-W3-tpo"/>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NIt-10-hYT"/>
+                            <constraint firstItem="Oud-5o-amy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="VXs-kP-YQx"/>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="fZ9-Sw-1TO"/>
+                            <constraint firstItem="Kbb-J1-Vqo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="95" id="sEa-eS-TWb"/>
+                            <constraint firstItem="F7b-SF-I0j" firstAttribute="top" secondItem="Oud-5o-amy" secondAttribute="bottom" constant="86" id="tNn-aT-Un1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F7b-SF-I0j" secondAttribute="bottom" constant="36" id="yPu-eZ-RRo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateTimeLabel" destination="M2D-oZ-E7N" id="TcW-1B-4y9"/>
                         <outlet property="lineChart" destination="Oud-5o-amy" id="YAw-iG-GoJ"/>
                         <outlet property="pressureLabel" destination="Im4-cv-6Pd" id="52B-bZ-jGI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560.86956521739137" y="98.641304347826093"/>
+            <point key="canvasLocation" x="-33" y="95"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0048531177449999997" green="0.80710631610000005" blue="0.0020519744139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
