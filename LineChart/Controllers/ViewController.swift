@@ -21,20 +21,22 @@ class ViewController: UIViewController {
     var rawPressure = 999.99
     var intervalTimer: Timer!
 
-    let hour = 6//3600
+    let hour = 3600
     let altimeter = CMAltimeter()
 
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ItemProperties4LineChart.plist")
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory,
+                        in: .userDomainMask).first?.appendingPathComponent("ItemProperties4LineChart.plist")
 
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        loadItems()
-        print("dataFilePath: \(String(describing: dataFilePath))")
 
+        super.viewDidLoad()
+
+        self.view.backgroundColor = #colorLiteral(red: 0.05952013284, green: 0.4955016375, blue: 0.3789333105, alpha: 1)
+
+        loadItems()
         getSensorData()
         intervalTimer3600()
-        self.view.backgroundColor = #colorLiteral(red: 0.05952013284, green: 0.4955016375, blue: 0.3789333105, alpha: 1)
     }
 
     func intervalTimer3600()
@@ -58,23 +60,15 @@ class ViewController: UIViewController {
                     self.rawPressure = Double(truncating: (data?.pressure)!) * 10.00
                     self.pressureLabel.text = String(format: "%.0f", self.rawPressure)+"mb"
 
-                    //MarK - Append the new reading here
+                    //MARK - Append the new entry here
                     self.newPointEntryItem.dateTimeTitle = self.pressureLabel.text ?? "appending broke"
                     self.newPointEntryItem.pressureValue = Int(self.rawPressure)
-
                     self.pointEntryArray.append(self.newPointEntryItem)
-                    print("self.newPointEntryItem.pressureValue: \(self.newPointEntryItem.pressureValue)")
-                    print("self.newPointEntryItem.dateTimeTitle: \(self.newPointEntryItem.dateTimeTitle)")
-                    print("pointEntryArray.count: \(self.pointEntryArray.count)")
+                    //Mark - Save the new entry
                     self.saveItems()
                     self.altimeter.stopRelativeAltitudeUpdates()
-                } else {
-                    self.pressureLabel.text = " Oops! 😕 1 "
-                }
-            }
-        }  else {
-            self.pressureLabel.text = " Oops! 😕 2 "
-        }
+                } else { self.pressureLabel.text = " Oops! 😕 1 " }
+            }  }  else { self.pressureLabel.text = " Oops! 😕 2 " }
     }
 
 
@@ -86,6 +80,8 @@ class ViewController: UIViewController {
         do {
             let data = try encoder.encode(pointEntryArray)
             try data.write(to: dataFilePath!)
+            //MARK - update the line graph after the save()
+            lineChart.dataEntries = pointEntryArray
         } catch {
             print("Error in encoding item array, \(error)")
         }
@@ -98,15 +94,16 @@ class ViewController: UIViewController {
     func loadItems() {
 
         if let data = try? Data(contentsOf: dataFilePath!) {
+
             let decoder = PropertyListDecoder()
             do {
                 pointEntryArray = try decoder.decode([PointEntry].self, from: data)
-                print("pointEntryArray.count: \(pointEntryArray.count)")
+                //print("pointEntryArray.count: \(pointEntryArray.count)")
             } catch {
                 print("Error decoding item Array: \(error)")
             }
         }
     }
     @IBAction func refreshButton(_ sender: UIButton)
-    { saveItems() }
+    { getSensorData() }
 }
