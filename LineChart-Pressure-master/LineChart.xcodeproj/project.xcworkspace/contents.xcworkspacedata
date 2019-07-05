@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../LineChart/Supporting Files"
+      name = "Supporting Files">
+      <Group
+         location = "group:Assets.xcassets"
+         name = "Assets.xcassets">
+         <Group
+            location = "group:AppIcon.appiconset"
+            name = "AppIcon.appiconset">
+            <FileRef
+               location = "group:Icon-76@2x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-Notify@2x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-40@2x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-Notify@3x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-40@3x.png">
+            </FileRef>
+            <FileRef
+               location = "group:pressureIcon-1024~universal@1x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-83.5@2x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-Small.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-60@3x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-76.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-60@2x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-40.png">
+            </FileRef>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-Small@3x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-Notify@1x.png">
+            </FileRef>
+            <FileRef
+               location = "group:Icon-Small@2x.png">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Base.lproj"
+         name = "Base.lproj">
+         <FileRef
+            location = "group:LaunchScreen.storyboard">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:AppDelegate.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
